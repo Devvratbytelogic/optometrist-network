@@ -117,6 +117,10 @@ export const useDataStore = create((set, get) => ({
     appointments: s.appointments.map((a) => (a.id === id ? { ...a, status } : a)),
   })),
 
+  updateAppointment: (id, data) => set((s) => ({
+    appointments: s.appointments.map((a) => (a.id === id ? { ...a, ...data } : a)),
+  })),
+
   updatePlan: (id, data) => set((s) => ({
     plans: s.plans.map((p) => (p.id === id ? { ...p, ...data } : p)),
   })),
